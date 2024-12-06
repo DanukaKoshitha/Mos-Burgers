@@ -1,0 +1,74 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #282828; /* Dark background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Header Styling */
+.header {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #ff7f50, #dc143c); /* Gradient from coral to crimson */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Heading */
+.header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+/* Button Styling */
+.new, .search {
+    margin: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 15px 25px;
+    background-color: #007bff; /* Blue button */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    text-align: center;
+}
+
+.new:hover, .search:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .header {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .new, .search {
+        font-size: 16px;
+        width: 100%;
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="A&C-Home.css">
+</head>
+<body>
+    
+    <div class="header">
+        <h1>Welcome</h1>
+        <div class="new">
+            <p onclick="addCustomer()">new Customer</p>
+        </div>
+        <div class="search">
+            <p onclick="searchCustomer()">Search Customer</p>
+        </div>
+    </div>
+
+    <script>
+        function addCustomer() {
+            window.location.href = "http://127.0.0.1:5500/AddCustomer.html"; // Redirect to AddCustomer.html
+        }
+    
+        function searchCustomer() {
+            window.location.href = "http://127.0.0.1:5500/SearchCustomer.html"; // Redirect to SearchCustomer.html
+        }
+    </script>
+  
+</body>
+</html>  

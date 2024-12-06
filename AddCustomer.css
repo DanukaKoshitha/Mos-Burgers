@@ -1,0 +1,98 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Customer Form Container */
+.customer {
+    background-color: rgb(255, 0, 98);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+}
+
+/* Header Line */
+.line1 p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Form Fields Styling */
+.lines {
+    margin-bottom: 20px;
+}
+
+.lines p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border: 1px solid #007bff;
+    outline: none;
+}
+
+/* Buttons */
+p, input[type="button"] {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+p:hover, input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+/* Input Hover and Focus */
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .customer {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .line1 p {
+        font-size: 20px;
+    }
+}

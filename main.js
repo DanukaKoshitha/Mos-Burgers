@@ -1,3 +1,6 @@
+function goCusomerAddPage(){
+    window.location.href = "http://127.0.0.1:5500/CashierHome.html";
+}
 
 const setCard = [
     
@@ -59,7 +62,11 @@ const setCard = [
       
 ];
 
-///////////////  insert card  /////////////////////////////
+
+///////////////////////    join the CashireHome.html page    //////////////////////////
+
+
+///////////////  insert card /////////////////////////////
 
 let card = document.getElementById("cards");
 let setOrder = document.getElementById("addtocart");
@@ -84,7 +91,7 @@ setCard.forEach((element, index) => {
 //////////////////////////////////////////////////////////////////
 
 const orderArray = [];
-
+const customerArray = [];
 
 let order = {
     items: [], 
@@ -96,6 +103,7 @@ let count = 1;
 let orderId = document.getElementById("orderId"); 
 
 ////////////////  Add to Shopping Cart  //////////////
+
 function addtoItem(index) {
     let item = setCard[index];
     item.qty = 1; 
@@ -138,6 +146,7 @@ function updateOrderList() {
 }
 
 ////////////////  Update Quantity for an Item  //////////////
+
 function updateQuantity(index, newQty) {
     const item = order.items[index];
     newQty = parseInt(newQty);
@@ -149,6 +158,7 @@ function updateQuantity(index, newQty) {
 }
 
 ////////////////  Remove an Item  //////////////
+
 function removeItem(index) {
     order.items.splice(index, 1); // Remove the item from the order's items array
     updateOrderList(); 
@@ -162,161 +172,48 @@ function updateTotal() {
 }
 
 ////////////////  Clear Cart and Start New Order  //////////////
+
 function new_orderid() {
-    setOrder.innerHTML = ""; 
-    count++; 
-    orderId.innerHTML = "ORDER NO. ▷ #" + count; 
 
-orderArray.push(order);
+    // Retrieve customer data from localStorage
+    const storedCustomerData = JSON.parse(localStorage.getItem("customerData"));
 
-console.log(orderArray);
-    order = {
-        items: [], 
-        total: 0, 
-    };
+    // Check if the customer data exists in localStorage
+    if (storedCustomerData) {
+        // Create the customerOrder object using the retrieved customer data
+        const customerOrder = {
+            customerId: storedCustomerData.customerId,
+            name: storedCustomerData.Name,
+            orderId: count, 
+            items: [...order.items], // Clone items to avoid reference issues
+            total: order.total,     
+        };
 
-    TotalId.innerHTML = "Total";
+        document.getElementById("menucusId").innerHTML=storedCustomerData.customerId;
+        
+        customerArray.push(customerOrder);
 
-    
+        setOrder.innerHTML = "";
+
+        count++;
+        orderId.innerHTML = "ORDER NO. ▷ #" + count;
+
+        // Store the current order in the orderArray
+        orderArray.push(JSON.parse(JSON.stringify(order)));
+
+        console.log(orderArray);
+        console.log(customerArray);
+
+        order = {
+            items: [],
+            total: 0,
+        };
+
+        TotalId.innerHTML = "Total";
+    } else {
+        console.log("No customer data found in localStorage.");
+    }
 }
-
-
-
-// let order = {
-//     currentOrder: {
-//         items: [], // Items for the current order
-//         total: 0,  // Total cost of the current order
-//     },
-//     orderArray: [], // Array to store history of placed orders
-// };
-
-// let TotalId = document.getElementById("total");
-// let count = 1; // Order ID counter
-// let orderId = document.getElementById("orderId"); // Reference to display Order ID
-
-// ////////////////  Add to Shopping Cart  //////////////
-// function addtoItem(index) {
-//     let item = setCard[index];
-//     item.qty = 1; // Initialize quantity for the item
-//     item.total = item.price * item.qty; // Initialize the total for the item
-
-//     // Add the item to the current order
-//     order.currentOrder.items.push(item);
-
-//     updateOrderList(); 
-//     updateTotal(); 
-// }
-
-// ////////////////  Update the Order List in the Cart  //////////////
-// function updateOrderList() {
-//     setOrder.innerHTML = ""; // Clear the order list
-
-//     order.currentOrder.items.forEach((item, idx) => {
-//         setOrder.innerHTML += `
-//         <div style="border-bottom: 1px solid #ccc; margin-bottom: 10px; padding-bottom: 10px;">
-//             <p><strong>${item.itemName}</strong></p>
-//             <p>${item.price}.00 LKR</p>
-//             <p>Discount: ${item.discount}%</p>
-//             <p>Total for this item: ${item.total}.00 LKR</p>
-//             <div>
-//                 <input 
-//                     type="number" 
-//                     min="1" 
-//                     value="${item.qty}" 
-//                     onchange="updateQuantity(${idx}, this.value)" 
-//                     placeholder="QTY" 
-//                     style="margin-right: 20px; background-color: rgb(245, 237, 8); border-radius: 20px; width: 90px; padding: 8px; text-align: center; font-weight: 700; color: rgb(28, 28, 28);"
-//                 >
-//                 <input 
-//                     type="button" 
-//                     onclick="removeItem(${idx})" 
-//                     value="REMOVE" 
-//                     style="background-color: rgb(246, 16, 16); border-radius: 20px; width: 90px; padding: 8px;"
-//                 >
-//             </div>
-//         </div>
-//         `;
-//     });
-// }
-
-// ////////////////  Update Quantity for an Item  //////////////
-// function updateQuantity(index, newQty) {
-//     const item = order.currentOrder.items[index];
-//     newQty = parseInt(newQty);
-
-//     if (isNaN(newQty) || newQty < 1) {
-//         alert("Quantity must be at least 1");
-//         return;
-//     }
-
-//     item.qty = newQty; // Update the item's quantity
-//     item.total = item.price * item.qty; // Update the total for this item
-//     updateOrderList(); // Re-render the order list
-//     updateTotal(); // Recalculate the overall total
-// }
-
-// ////////////////  Remove an Item  //////////////
-// function removeItem(index) {
-//     order.currentOrder.items.splice(index, 1); // Remove the item from the current order
-//     updateOrderList(); // Re-render the updated list
-//     updateTotal(); // Recalculate the total
-// }
-
-// ////////////////  Update Total for All Items  //////////////
-// function updateTotal() {
-//     order.currentOrder.total = order.currentOrder.items.reduce((sum, item) => sum + item.total, 0); // Calculate the total
-//     TotalId.innerHTML = "Total →_→ " + order.currentOrder.total + ".00 LKR"; // Update the total display
-// }
-
-// ////////////////  Place the Current Order  //////////////
-// function placeOrder() {
-//     if (order.currentOrder.items.length === 0) {
-//         alert("Cannot place an empty order!");
-//         return;
-//     }
-
-//     // Add the current order to the order history
-//     order.orderArray.push({
-//         orderId: count,
-//         items: [...order.currentOrder.items], // Clone the items array
-//         total: order.currentOrder.total,
-//     });
-
-//     console.log("Order placed:", order.orderArray);
-
-//     // Clear the current order
-//     new_orderid();
-// }
-
-// ////////////////  Clear Cart and Start New Order  //////////////
-// function new_orderid() {
-//     setOrder.innerHTML = ""; // Clear the cart UI
-//     count++; // Increment the order ID
-//     orderId.innerHTML = "ORDER NO. ▷ #" + count; // Update the order ID display
-
-//     console.log(order);
-
-//     order.orderArray.push(order.currentOrder)
-    
-//     // Reset the current order
-//     order.currentOrder = {
-//         items: [], // Clear the items array
-//         total: 0,  // Reset the total
-//     };
-
-//     // Reset the total display
-//     TotalId.innerHTML = "Total →_→ 0.00 LKR";
-
-  
-// }
-
-
-
-
-
-
-
-
 
 
 

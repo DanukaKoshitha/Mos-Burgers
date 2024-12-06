@@ -1,1 +1,115 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #000000, #8B0000); /* Black to Crimson gradient */
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+#CashierLogin {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #f5a623; /* Warm orange for heading */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Input Labels */
+h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #ffcccb; /* Light crimson for labels */
+    width: 100%;
+    text-align: left;
+    max-width: 600px; /* Max width for the fields */
+}
+
+/* Input Fields */
+input[type="text"] {
+    width: 100%;
+    max-width: 600px; /* Limit width */
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #222; /* Dark background for inputs */
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Focus Effect */
+input[type="text"]:focus {
+    border-color: #f5a623;
+    outline: none;
+}
+
+/* Button Styling */
+input[type="button"] {
+    width: 100%;
+    max-width: 600px; /* Limit width */
+    padding: 15px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #8B0000; /* Crimson color for the button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Hover Effect */
+input[type="button"]:hover {
+    background-color: #b22222; /* Lighter crimson on hover */
+}
+
+/* Link Styling */
+a {
+    font-size: 16px;
+    color: #f5a623;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* Link Hover Effect */
+a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    input[type="text"],
+    input[type="button"] {
+        font-size: 16px;
+    }
+}

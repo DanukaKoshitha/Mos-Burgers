@@ -9,14 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btnLogin").addEventListener("click", LoginFuntion);
 
     function LoginFuntion() {
-
       if (username == "Danuka" && PassWord == 1234) {
         Swal.fire({
           icon: "success",
           title: "Login Succesfull",
           showConfirmButton: false,
           timer: 1500,
-        }).then(() => { window.location.href = "http://127.0.0.1:5500/img/CashireHome.html"; });
+        }).then(() => {
+          window.location.href = "http://127.0.0.1:5500/CashierHome.html";
+        });
       } else {
         Swal.fire({
           icon: "error",
@@ -26,9 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      document.getElementById("username").value='';
-      document.getElementById("PassWord").value='';
-
+      // document.getElementById("username").value = "";
+      // document.getElementById("PassWord").value = "";
     }
   } else if (bodyId === "AddminLogin") {
     //////////  index.html file  ////////////////////
@@ -44,13 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(PassWordAddmin);
 
       if (usernameAddmin == "kamal" && PassWordAddmin == 1234) {
-
         Swal.fire({
           icon: "success",
           title: "Login Succesfull",
           showConfirmButton: false,
           timer: 1500,
-        }).then(() => { window.location.href = "http://127.0.0.1:5500/img/AddminHome.html"; });
+        }).then(() => {
+          window.location.href = "http://127.0.0.1:5500/img/AddminHome.html";
+        });
       } else {
         Swal.fire({
           icon: "error",
@@ -60,9 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      document.getElementById("usernameAddmin").value='';
-      document.getElementById("PassWordAddmin").value='';
-
+      // document.getElementById("usernameAddmin").value = "";
+      // document.getElementById("PassWordAddmin").value = "";
     }
   }
 });

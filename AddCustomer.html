@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Customer</title>
+    <link rel="stylesheet" href="AddCustomer.css">
+</head>
+<body>
+    
+<div class="customer">
+    <div class="field">
+        <ul>
+            <li>
+                <div class="line1">
+                    <p id="cusId">C0001</p> <!-- Initial customer ID displayed -->
+                </div>
+            </li>
+            <li>
+                <div class="lines">
+                    <p>Name</p>
+                    <input type="text" id="name">
+                </div>
+            </li>
+            <li>
+                <div class="lines">
+                    <p>Mobile</p>
+                    <input type="text" id="mobile">
+                </div>
+            </li>
+            <li>
+                <div class="lines">
+                    <p>Address</p>
+                    <input type="text" id="address">
+                </div>
+            </li>
+        </ul>
+        <p style="background-color: aquamarine; padding: 20px; border-radius: 20px;" onclick="addCustomer()">Add Customer</p>
+
+        <input type="button" value="Menu Page" onclick="goMenuPage()" id="btn">
+    </div>
+</div>
+
+<script>
+
+    function goMenuPage(){
+        window.location.href = "http://127.0.0.1:5500/MenuPage.html#";
+    }
+
+
+    // Function to add customer data to localStorage and increment customer ID
+    function addCustomer() {
+        // Retrieve customer input data
+        let cusId = document.getElementById("cusId").innerText.trim(); // Get the current customer ID
+        let name = document.getElementById("name").value; 
+        let mobile = document.getElementById("mobile").value; 
+        let address = document.getElementById("address").value; 
+
+        const customer = {
+            customerId: cusId,
+            Name: name,
+            Phone: mobile,
+            Address: address
+        };
+
+        // Store customer data in localStorage
+        localStorage.setItem("customerData", JSON.stringify(customer));
+        console.log("Customer added:", customer);
+
+        // Increment customer ID for next entry
+        let nextId = parseInt(cusId.replace('C', '')) + 1; // Increment numeric part of the customer ID
+        let nextCustomerId = 'C' + String(nextId).padStart(4, '0'); // Format the next customer ID with leading zeros
+
+        // Update the customer ID in the HTML
+        document.getElementById("cusId").innerText = nextCustomerId;
+
+        // Optionally, store the next customer ID in localStorage as well for future use
+        localStorage.setItem("nextCustomerId", nextCustomerId);
+    }
+
+    // Initialize customer ID from localStorage if available
+    window.onload = function() {
+        let nextCustomerId = localStorage.getItem("nextCustomerId");
+        if (nextCustomerId) {
+            document.getElementById("cusId").innerText = nextCustomerId; // Set the customer ID from localStorage
+        }
+    };
+
+
+    document.getElementById("cusId").innerHTML="";
+    document.getElementById("name").innerHTML="";
+    document.getElementById("mobile").innerHTML="";
+    document.getElementById("address").innerHTML="";
+
+
+</script>
+
+<script src="main.js" defer></script>
+
+</body>
+</html>
