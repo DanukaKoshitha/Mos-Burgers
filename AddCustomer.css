@@ -8,11 +8,12 @@
 /* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #000000;
+    background: linear-gradient(to bottom, #000000, #8B0000); /* Black to Crimson gradient */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrollbars */
 }
 
 /* Customer Form Container */

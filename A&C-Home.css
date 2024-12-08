@@ -8,67 +8,79 @@
 /* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background: #282828; /* Dark background */
+    background: linear-gradient(to bottom, #550000, #000); /* Gradient background */
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
-/* Header Styling */
-.header {
+/* Login Container */
+.login-container {
     text-align: center;
-    padding: 30px;
-    background: linear-gradient(135deg, #ff7f50, #dc143c); /* Gradient from coral to crimson */
+    background-color: #400000; /* Dark red background */
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
 }
 
 /* Heading */
-.header h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-    color: #fff;
+.login-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffcc00; /* Bright yellow color */
 }
 
-/* Button Styling */
-.new, .search {
-    margin: 15px;
-    font-size: 18px;
-    font-weight: bold;
+.login-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
     color: white;
-    padding: 15px 25px;
-    background-color: #007bff; /* Blue button */
+}
+
+/* Input Fields */
+.login-container input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: none;
     border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+/* Buttons */
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #990000; /* Bright red button */
+    border: none;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 200px;
-    text-align: center;
+    transition: 0.3s ease;
 }
 
-.new:hover, .search:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.login-container button:hover {
+    background-color: #cc0000; /* Darker red on hover */
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    .header {
-        width: 90%;
-        padding: 20px;
-    }
+/* Additional Links */
+.login-container a {
+    color: #ffcc00; /* Bright yellow */
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+}
 
-    .header h1 {
-        font-size: 28px;
-    }
-
-    .new, .search {
-        font-size: 16px;
-        width: 100%;
-        margin: 10px 0;
-    }
+.login-container a:hover {
+    text-decoration: underline;
 }

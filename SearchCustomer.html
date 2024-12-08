@@ -6,6 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    sere
+    <div class="search">
+        <h1>Search Customer</h1>
+        <p>Enter Phone Number</p>
+        <input type="text" placeholder="" id="phone">
+        <input type="button" value="Search" id="btnSearch">
+    </div>
+
+
+    <script>
+        const customersArray = JSON.parse(localStorage.getItem("customerData")) || [];
+        console.log(customersArray);
+
+
+        let number = document.getElementById("phone");
+
+        document.getElementById("btnSearch").addEventListener("click",search);
+
+        function search(){
+           
+            customersArray.forEach(element => {
+                if(number==customersArray.Phone){
+                    alert("succes")
+                }else{
+                    alert("not found customer")
+                }
+            });
+        }
+
+
+
+
+    </script>
 </body>
 </html>

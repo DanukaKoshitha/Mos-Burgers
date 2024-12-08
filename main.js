@@ -174,23 +174,25 @@ function updateTotal() {
 ////////////////  Clear Cart and Start New Order  //////////////
 
 function new_orderid() {
+    
+    const storedCustomerData = JSON.parse(localStorage.getItem("customerData")) || [];
 
-    // Retrieve customer data from localStorage
-    const storedCustomerData = JSON.parse(localStorage.getItem("customerData"));
+    
+    if (storedCustomerData.length > 0) {
+        // Retrieve the last customer object from the array (or implement your own logic to find the active customer)
+        const customer = storedCustomerData[storedCustomerData.length - 1];
 
-    // Check if the customer data exists in localStorage
-    if (storedCustomerData) {
-        // Create the customerOrder object using the retrieved customer data
         const customerOrder = {
-            customerId: storedCustomerData.customerId,
-            name: storedCustomerData.Name,
+            customerId: customer.customerId,
+            name: customer.Name,
             orderId: count, 
             items: [...order.items], // Clone items to avoid reference issues
             total: order.total,     
         };
 
-        document.getElementById("menucusId").innerHTML=storedCustomerData.customerId;
-        
+        // Display the customer ID in the HTML
+        document.getElementById("menucusId").innerHTML = customer.customerId;
+
         customerArray.push(customerOrder);
 
         setOrder.innerHTML = "";
@@ -204,6 +206,7 @@ function new_orderid() {
         console.log(orderArray);
         console.log(customerArray);
 
+        // Reset the order
         order = {
             items: [],
             total: 0,
