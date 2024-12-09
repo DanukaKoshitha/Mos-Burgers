@@ -4,11 +4,14 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #000000, #8B0000); /* Black to Crimson gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrollbars */
 }
-
 .scrollable {
   height: 100vh;
   overflow-y: auto;

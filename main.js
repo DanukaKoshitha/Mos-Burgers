@@ -1,6 +1,9 @@
 function goCusomerAddPage(){
     window.location.href = "http://127.0.0.1:5500/CashierHome.html";
 }
+function goHistory(){
+    window.location.href = "http://127.0.0.1:5500/History.html";
+}
 
 const setCard = [
     
@@ -205,6 +208,10 @@ function new_orderid() {
 
         console.log(orderArray);
         console.log(customerArray);
+
+        // Store updated array in localStorage
+        localStorage.setItem("OrderObject", JSON.stringify(customerArray));
+        console.log("Customer added:", customerArray);
 
         // Reset the order
         order = {
