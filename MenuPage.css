@@ -5,12 +5,12 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #000000, #8B0000); /* Black to Crimson gradient */
+  background: linear-gradient(to bottom, #000000, #8B0000); 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
-  overflow: hidden; /* Prevent scrollbars */
+  height: 100vh; 
+  overflow: hidden; 
 }
 .scrollable {
   height: 100vh;

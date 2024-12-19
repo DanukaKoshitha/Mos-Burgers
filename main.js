@@ -5,6 +5,10 @@ function goHistory(){
     window.location.href = "http://127.0.0.1:5500/History.html";
 }
 
+function goAdminPage(){
+     window.location.href ="http://127.0.0.1:5500/index.html"
+}
+
 const setCard = [
     
         { itemCode: "B1001", itemName: "Classic Burger (Large)", price: 750.00, discount: 0, img: "https://images.pexels.com/photos/5554607/pexels-photo-5554607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
@@ -68,6 +72,13 @@ const setCard = [
 
 ///////////////////////    join the CashireHome.html page    //////////////////////////
 
+localStorage.setItem("ItemCards", JSON.stringify(setCard));
+
+
+const localItemrArray = JSON.parse(localStorage.getItem("ItemCards")) || [];
+console.log(localItemrArray);
+
+
 
 ///////////////  insert card /////////////////////////////
 
@@ -75,7 +86,7 @@ let card = document.getElementById("cards");
 let setOrder = document.getElementById("addtocart");
 
 
-setCard.forEach((element, index) => {
+localItemrArray.forEach((element, index) => {
     card.innerHTML += `
         <div class="col d-flex justify-content-center mb-4">
             <div class="card" style="width: 18rem;background: #000;color: #f5f3f3;padding: 20px;border-radius: 40px;">

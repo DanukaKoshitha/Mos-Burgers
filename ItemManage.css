@@ -1,0 +1,100 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #550000, #000); 
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8B0000;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: black;
+    transition: 0.3s ease;
+}
+
+.navbar .nav-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Table Styles */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #8B0000;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Button Styles */
+input[type="button"] {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+input[type="button"].delete-btn {
+    background-color: red;
+    color: white;
+}
+
+input[type="button"].delete-btn:hover {
+    background-color: darkred;
+    transition: 0.3s ease;
+}
+
+input[type="button"].update-btn {
+    background-color: green;
+    color: white;
+}
+
+input[type="button"].update-btn:hover {
+    background-color: darkgreen;
+    transition: 0.3s ease;
+}
+
+/* Footer */
+footer {
+    
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+}

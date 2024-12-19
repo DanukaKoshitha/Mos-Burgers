@@ -1,22 +1,19 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #000000, #8B0000); /* Black to Crimson gradient */
+    background: linear-gradient(to bottom, #000000, #8B0000); 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevent scrollbars */
+    height: 100vh; 
+    overflow: hidden; 
 }
 
-/* Customer Form Container */
 .customer {
     background-color: rgb(255, 0, 98);
     border-radius: 10px;
@@ -25,7 +22,6 @@ body {
     padding: 20px;
 }
 
-/* Header Line */
 .line1 p {
     font-size: 24px;
     font-weight: bold;
@@ -33,7 +29,6 @@ body {
     text-align: center;
 }
 
-/* Form Fields Styling */
 .lines {
     margin-bottom: 20px;
 }
@@ -80,7 +75,6 @@ p:hover, input[type="button"]:hover {
     background-color: #0056b3;
 }
 
-/* Input Hover and Focus */
 input[type="text"]:focus {
     outline: none;
     border-color: #007bff;

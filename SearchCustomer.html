@@ -54,38 +54,33 @@
     </div>
 
     <script>
-      // Retrieve and parse customer data
       const customersArray =
         JSON.parse(localStorage.getItem("customerData")) || [];
       console.log("Loaded customer data:", customersArray);
 
-      // Reference elements
       const phoneInput = document.getElementById("phone");
       const nameInput = document.getElementById("name");
       const mobileInput = document.getElementById("mobile");
       const addressInput = document.getElementById("address");
       const btnSearch = document.getElementById("btnSearch");
 
-      // Search function
       btnSearch.addEventListener("click", function () {
-        const phoneValue = phoneInput.value.trim(); // Ensure no leading/trailing spaces
+        const phoneValue = phoneInput.value.trim(); 
         console.log("Searching for phone:", phoneValue);
 
-        // Debug: List all phone numbers in the array
         console.log(
           "Phone numbers in array:",
           customersArray.map((c) => (c.Phone ? c.Phone.trim() : "undefined"))
         );
 
-        // Find the customer by matching trimmed phone values, with safeguard
         const customer = customersArray.find(
           (c) => c.Phone && c.Phone.trim() === phoneValue
         );
         console.log("Search result:", customer);
 
         if (customer) {
-          nameInput.value = customer.Name ? customer.Name.trim() : ""; // Clean up trailing spaces
-          mobileInput.value = customer.Phone ? customer.Phone.trim() : ""; // Assuming mobile is stored as Phone
+          nameInput.value = customer.Name ? customer.Name.trim() : ""; 
+          mobileInput.value = customer.Phone ? customer.Phone.trim() : ""; 
           addressInput.value = customer.Address ? customer.Address.trim() : "";
         } else {
           nameInput.value = "";

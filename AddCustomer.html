@@ -13,7 +13,6 @@
           <li>
             <div class="line1">
               <p id="cusId">C0001</p>
-              <!-- Initial customer ID displayed -->
             </div>
           </li>
           <li>
@@ -62,9 +61,15 @@
 
       let localCustomerArray = [];
 
-      // Function to add customer data to localStorage and increment customer ID
       function addCustomer() {
-    // Retrieve customer input data
+
+        Swal.fire({
+          icon: "success",
+          title: "Added Succesfull",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
     let cusId = document.getElementById("cusId").innerText.trim();
     let name = document.getElementById("name").value;
     let mobile = document.getElementById("mobile").value;
@@ -77,32 +82,27 @@
         Address: address,
     };
 
-    // Retrieve existing data from localStorage
     const localCustomerArray = JSON.parse(localStorage.getItem("customerData")) || [];
 
-    // Add the new customer to the array
     localCustomerArray.push(customer);
 
-    // Store updated array in localStorage
     localStorage.setItem("customerData", JSON.stringify(localCustomerArray));
     console.log("Customer added:", localCustomerArray);
 
-    // Increment customer ID for the next entry
     let nextId = parseInt(cusId.replace("C", "")) + 1;
     let nextCustomerId = "C" + String(nextId).padStart(4, "0");
 
     document.getElementById("cusId").innerText = nextCustomerId;
 
-    // Clear input fields
     document.getElementById("name").value = "";
     document.getElementById("mobile").value = "";
     document.getElementById("address").value = "";
 
-    // Optionally store the next customer ID in localStorage
     localStorage.setItem("nextCustomerId", nextCustomerId);
 }
 
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="main.js" defer></script>
   </body>

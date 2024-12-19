@@ -9,40 +9,79 @@
     <style>
         body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #000000, #8B0000); /* Black to Crimson gradient */
+    background: linear-gradient(to bottom, #000000, #8B0000); 
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+#cardContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevent scrollbars */
 }
+
+ul{
+    list-style: none;
+    color: bisque;
+}
+.nav{
+    margin-left: 1100px;
+    padding: 25px;
+    font-size: 20px;
+    text-align: right;
+    color: bisque;
+    justify-content: space-between;
+    width: 400px;
+}
+
     </style>
 </head>
 <body>
-    <p>History</p>
+    <p style="text-align: center;color: antiquewhite;font-size: 40px;margin: 20px;font-weight: 800;">History</p>
+    
+            <div class="nav">
+                <p onclick="goHome()">Home</p>
+                <p onclick="menupage()">Menu Page</p>
+                <p onclick="adminpage()">Admin Login</p>
+            </div><a href=""></a>
+
     <div id="cardContainer" style="display: flex; gap: 20px; flex-wrap: wrap;"></div>
 
+
+
+
     <script>
-        // Retrieve stored order objects from localStorage
+
+        function adminpage(){
+            window.location.href ="http://127.0.0.1:5500/index.html"
+        }
+
+        function goHome(){
+            window.location.href = "http://127.0.0.1:5500/CashierHome.html";
+        }
+
+        function menupage(){
+            window.location.href = "http://127.0.0.1:5500/MenuPage.html#";
+        }
         const storedOrdersObjects = JSON.parse(localStorage.getItem("OrderObject")) || [];
         console.log(storedOrdersObjects);
 
         const cardContainer = document.getElementById("cardContainer");
 
-// Generate cards
 storedOrdersObjects.forEach(order => {
-    // Create a card div
     const card = document.createElement("div");
     card.style.cssText = `
         background-color: #2a2a2a;
         color: white;
         border-radius: 8px;
         padding: 15px;
-        width: 300px;
+        width: 350px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     `;
 
-    // Create order details
     card.innerHTML = `
         <h3>Order #${order.orderId.toString().padStart(4, '0')}</h3>
         <p><strong>Customer:</strong> ${order.name}</p>
@@ -63,6 +102,9 @@ storedOrdersObjects.forEach(order => {
     // Append card to the container
     cardContainer.appendChild(card);
 });
+
+
+
 </script>
 </body>
 

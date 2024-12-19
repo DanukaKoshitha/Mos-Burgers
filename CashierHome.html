@@ -9,22 +9,22 @@
 <body>
     
     <div class="header">
-        <h1 style="font-size: 80px;">Welcome</h1>
+        <h1 style="font-size: 80px;color: bisque;text-align: center;">Welcome</h1>
         <div class="new">
-            <p onclick="addCustomer()" style="font-size: 40px;margin-top: 25%;padding: 20px;">new Customer</p>
+            <p onclick="addCustomer()" style="font-size: 40px;margin-top: 25%;padding: 20px;background-color: #3a0313;border-radius: 50px;margin: 10px;">new Customer</p>
         </div>
         <div class="search">
-            <p onclick="searchCustomer()" style="font-size: 40px;padding: 20px;">Search Customer</p>
+            <p onclick="searchCustomer()" style="font-size: 40px;padding: 20px;background-color: #3a0313;border-radius: 50px;">Search Customer</p>
         </div>
     </div>
 
     <script>
         function addCustomer() {
-            window.location.href = "http://127.0.0.1:5500/AddCustomer.html"; // Redirect to AddCustomer.html
+            window.location.href = "http://127.0.0.1:5500/AddCustomer.html"; 
         }
     
         function searchCustomer() {
-            window.location.href = "http://127.0.0.1:5500/SearchCustomer.html"; // Redirect to SearchCustomer.html
+            window.location.href = "http://127.0.0.1:5500/SearchCustomer.html"; 
         }
     </script>
   

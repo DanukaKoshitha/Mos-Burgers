@@ -43,14 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(usernameAddmin);
       console.log(PassWordAddmin);
 
-      if (usernameAddmin == "kamal" && PassWordAddmin == 1234) {
+      if (usernameAddmin == "Kamal" && PassWordAddmin == 1234) {
         Swal.fire({
           icon: "success",
           title: "Login Succesfull",
           showConfirmButton: false,
           timer: 1500,
         }).then(() => {
-          window.location.href = "http://127.0.0.1:5500/img/AddminHome.html";
+          window.location.href = "http://127.0.0.1:5500/AddminHome.html";
         });
       } else {
         Swal.fire({
