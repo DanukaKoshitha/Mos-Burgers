@@ -1,62 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="MenuPage.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-</head>
-<body>
+    <link rel="stylesheet" href="css/MenuPage.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <div class="text-center">
-        <div class="row">
-            <div class="col-1" style="margin-top: 180px;">
-                <input type="button" value="Home" id="" style="width: 110px;margin: 25px;background-color: rgb(109, 92, 14);border-radius: 50px;font-weight: 800;border: none;padding: 10px;" onclick="goCusomerAddPage()">
-                <input type="button" value="order" id="" style="width: 110px;margin: 25px;background-color: rgb(109, 92, 14);border-radius: 50px;font-weight: 800;border: none;padding: 10px;font-size: 17px;">
-                <input type="button" value="History" id="" style="width: 110px;margin: 25px;background-color: rgb(109, 92, 14);border-radius: 50px;font-weight: 800;border: none;padding: 10px;" onclick="goHistory()">
-                <input type="button" value="Admin Login" id="" style="width: 110px;margin: 25px;background-color: rgb(109, 92, 14);border-radius: 50px;font-weight: 800;border: none;padding: 10px;font-size: 15px;" onclick="goAdminPage()">
-            </div>
-            <div class="col-8 scrollable">
-                <h1 style="font-weight: 700;padding: 15px;color: bisque;">Menu</h1>
-                <br>
-                <div class="container text-center">
-                    <div class="row row-cols-3" id="cards">
-                            <!-- insert cards hear -->
-                    </div>
-                </div>
-                
-            </div>
-            <div class="col-3">
-                <h1 style="padding-bottom:0 ;font-weight: 700;margin-bottom: 5px;color: bisque;">Shopping Cart</h1>
-                <br>
-                <div class="container card" style="width: 18rem;background: #000;color: #f5f3f3;padding: 20px;border-radius: 20px;margin-top: 0ox;">
-                    <div id="orderId" style="font-size: 25px;font-weight: 700;">ORDER NO. ▷  #1</div>
-                    <div id="menucusId" style="font-size: 15px;font-weight: 500;">C001</div>
-                    <div class="card-body" id="addtocart">
-                            <!-- insert order item -->
-                            
-                    </div>
-                </div>
-                <div class="container card" style="width: 18rem;margin-top: 10px;background: #000;color: #f5f3f3;padding: 10px;border-radius: 20px;">
-                    <h3 id="total">TOTAL</h3>
-                </div>
-                <div class="container card" style="width: 18rem;margin-top: 10px;background: #000;color: #f5f3f3;padding: 10px;border-radius: 20px;">
-                    <h3 style="color: rgb(251, 4, 53);font-weight: 700;" onclick="new_orderid()">ORDER</h3>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-1" style="margin-top: 180px">
+          <input
+            type="button"
+            value="Home"
+            id=""
+            style="
+              width: 110px;
+              margin: 25px;
+              background-color: rgb(109, 92, 14);
+              border-radius: 50px;
+              font-weight: 800;
+              border: none;
+              padding: 10px;
+            "
+            onclick="goCusomerAddPage()"
+          />
+          <input
+            type="button"
+            value="order"
+            id=""
+            style="
+              width: 110px;
+              margin: 25px;
+              background-color: rgb(109, 92, 14);
+              border-radius: 50px;
+              font-weight: 800;
+              border: none;
+              padding: 10px;
+              font-size: 17px;
+            "
+          />
+          <input
+            type="button"
+            value="History"
+            id=""
+            style="
+              width: 110px;
+              margin: 25px;
+              background-color: rgb(109, 92, 14);
+              border-radius: 50px;
+              font-weight: 800;
+              border: none;
+              padding: 10px;
+            "
+            onclick="goHistory()"
+          />
+          <input
+            type="button"
+            value="Admin Login"
+            id=""
+            style="
+              width: 110px;
+              margin: 25px;
+              background-color: rgb(109, 92, 14);
+              border-radius: 50px;
+              font-weight: 800;
+              border: none;
+              padding: 10px;
+              font-size: 15px;
+            "
+            onclick="goAdminPage()"
+          />
         </div>
+        <div class="col-8 scrollable">
+          <h1 style="font-weight: 700; padding: 15px; color: bisque">Menu</h1>
+          <br />
+          <div class="container text-center">
+            <div class="row row-cols-3" id="cards">
+              <!-- insert cards hear -->
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <h1
+            style="
+              padding-bottom: 0;
+              font-weight: 700;
+              margin-bottom: 5px;
+              color: bisque;
+            "
+          >
+            Shopping Cart
+          </h1>
+          <br />
+          <div
+            class="container card"
+            style="
+              width: 18rem;
+              background: #000;
+              color: #f5f3f3;
+              padding: 20px;
+              border-radius: 20px;
+              margin-top: 0ox;
+            "
+          >
+            <div id="orderId" style="font-size: 25px; font-weight: 700">
+              ORDER NO. ▷ #1
+            </div>
+            <div id="menucusId" style="font-size: 15px; font-weight: 500">
+              C001
+            </div>
+            <div class="card-body" id="addtocart">
+              <!-- insert order item -->
+            </div>
+          </div>
+          <div
+            class="container card"
+            style="
+              width: 18rem;
+              margin-top: 10px;
+              background: #000;
+              color: #f5f3f3;
+              padding: 10px;
+              border-radius: 20px;
+            "
+          >
+            <h3 id="total">TOTAL</h3>
+          </div>
+          <div
+            class="container card"
+            style="
+              width: 18rem;
+              margin-top: 10px;
+              background: #000;
+              color: #f5f3f3;
+              padding: 10px;
+              border-radius: 20px;
+            "
+          >
+            <h3
+              style="color: rgb(251, 4, 53); font-weight: 700"
+              onclick="new_orderid()"
+            >
+              ORDER
+            </h3>
+          </div>
+        </div>
+      </div>
     </div>
 
-    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-        AOS.init();
-      </script>
-      
-        <script src="main.js"></script>
-    </body>
-    </html>
-   
-                        
+    <script src="main.js"></script>
+  </body>
+</html>

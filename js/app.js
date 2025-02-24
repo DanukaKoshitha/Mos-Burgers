@@ -3,20 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (bodyId === "CashierLogin") {
     //////////////  CashierLogin.html file   ////////////////
-    let username = document.getElementById("username").value;
-    let PassWord = document.getElementById("PassWord").value;
 
     document.getElementById("btnLogin").addEventListener("click", LoginFuntion);
 
     function LoginFuntion() {
-      if (username == "Danuka" && PassWord == 1234) {
+  
+      let username = document.getElementById("username").value;
+      let PassWord = document.getElementById("PassWord").value;
+
+      if (username === "Danuka" && PassWord === "1234") {
         Swal.fire({
           icon: "success",
           title: "Login Succesfull",
           showConfirmButton: false,
           timer: 1500,
         }).then(() => {
-          window.location.href = "http://127.0.0.1:5500/CashierHome.html";
+          window.location.href = "/CashierHome.html";
         });
       } else {
         Swal.fire({
@@ -27,30 +29,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // document.getElementById("username").value = "";
-      // document.getElementById("PassWord").value = "";
+      document.getElementById("username").value = "";
+      document.getElementById("PassWord").value = "";
     }
   } else if (bodyId === "AddminLogin") {
     //////////  index.html file  ////////////////////
-    let usernameAddmin = document.getElementById("usernameAddmin").value;
-    let PassWordAddmin = document.getElementById("PassWordAddmin").value;
 
-    document
-      .getElementById("btnLoginAddmin")
-      .addEventListener("click", LoginFuntionAddmin);
+    document.getElementById("btnLoginAddmin").addEventListener("click", LoginFuntionAddmin);
 
     function LoginFuntionAddmin() {
-      console.log(usernameAddmin);
-      console.log(PassWordAddmin);
 
-      if (usernameAddmin == "Kamal" && PassWordAddmin == 1234) {
+      let usernameAddmin = document.getElementById("usernameAddmin").value;
+      let PassWordAddmin = document.getElementById("PassWordAddmin").value;
+
+      if (usernameAddmin === "Kamal" && PassWordAddmin === "1234") {
         Swal.fire({
           icon: "success",
           title: "Login Succesfull",
           showConfirmButton: false,
           timer: 1500,
         }).then(() => {
-          window.location.href = "http://127.0.0.1:5500/AddminHome.html";
+          window.location.href = "/AddminHome.html";
         });
       } else {
         Swal.fire({
@@ -61,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // document.getElementById("usernameAddmin").value = "";
-      // document.getElementById("PassWordAddmin").value = "";
+      document.getElementById("usernameAddmin").value = "";
+      document.getElementById("PassWordAddmin").value = "";
     }
   }
 });

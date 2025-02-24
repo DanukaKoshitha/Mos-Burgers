@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="A&C-Home.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="css/A&C-Home.css" />
+  </head>
+  <body>
     <div class="header">
-        <h1 style="font-size: 80px;color: bisque;text-align: center;">Welcome</h1>
-        <div class="new">
-            <p onclick="addCustomer()" style="font-size: 40px;margin-top: 25%;padding: 20px;background-color: #3a0313;border-radius: 50px;margin: 10px;">new Customer</p>
-        </div>
-        <div class="search">
-            <p onclick="searchCustomer()" style="font-size: 40px;padding: 20px;background-color: #3a0313;border-radius: 50px;">Search Customer</p>
-        </div>
+      <h1 style="font-size: 80px; color: bisque; text-align: center">
+        Welcome
+      </h1>
+      <div class="new">
+        <p
+          onclick="addCustomer()"
+          style="
+            font-size: 40px;
+            margin-top: 25%;
+            padding: 20px;
+            background-color: #3a0313;
+            border-radius: 50px;
+            margin: 10px;
+          "
+        >
+          new Customer
+        </p>
+      </div>
+      <div class="search">
+        <p
+          onclick="searchCustomer()"
+          style="
+            font-size: 40px;
+            padding: 20px;
+            background-color: #3a0313;
+            border-radius: 50px;
+          "
+        >
+          Search Customer
+        </p>
+      </div>
     </div>
 
     <script>
-        function addCustomer() {
-            window.location.href = "http://127.0.0.1:5500/AddCustomer.html"; 
-        }
-    
-        function searchCustomer() {
-            window.location.href = "http://127.0.0.1:5500/SearchCustomer.html"; 
-        }
+      function addCustomer() {
+        window.location.href = "/AddCustomer.html";
+      }
+
+      function searchCustomer() {
+        window.location.href = "/SearchCustomer.html";
+      }
     </script>
-  
-</body>
-</html>  
+  </body>
+</html>

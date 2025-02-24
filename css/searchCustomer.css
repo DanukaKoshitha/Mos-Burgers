@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+    background: radial-gradient(circle, maroon, black);
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  .form-container {
+    background-color: hotpink;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    width: 300px;
+  }
+  .form-container input[type="text"],
+  .form-container input[type="button"] {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  .form-container input[type="button"] {
+    background-color: lightgreen;
+    color: black;
+    cursor: pointer;
+  }

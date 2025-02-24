@@ -4,39 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Customer Search</title>
-    <style>
-      body {
-        background-color: black;
-        background: radial-gradient(circle, maroon, black);
-        font-family: Arial, sans-serif;
-        color: white;
-        text-align: center;
-        padding: 20px;
-      }
-      .form-container {
-        background-color: hotpink;
-        border-radius: 10px;
-        padding: 20px;
-        margin: auto;
-        width: 300px;
-      }
-      .form-container input[type="text"],
-      .form-container input[type="button"] {
-        display: block;
-        width: 90%;
-        margin: 10px auto;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-      }
-      .form-container input[type="button"] {
-        background-color: lightgreen;
-        color: black;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="css/searchCustomer.css" />
   </head>
-
   <body>
     <div class="form-container">
       <h1>Search Customer</h1>
@@ -52,50 +21,7 @@
       <input type="text" id="address" disabled />
       <input type="button" value="MenuPage" id="" onclick="gomenu()" />
     </div>
-
-    <script>
-      const customersArray =
-        JSON.parse(localStorage.getItem("customerData")) || [];
-      console.log("Loaded customer data:", customersArray);
-
-      const phoneInput = document.getElementById("phone");
-      const nameInput = document.getElementById("name");
-      const mobileInput = document.getElementById("mobile");
-      const addressInput = document.getElementById("address");
-      const btnSearch = document.getElementById("btnSearch");
-
-      btnSearch.addEventListener("click", function () {
-        const phoneValue = phoneInput.value.trim(); 
-        console.log("Searching for phone:", phoneValue);
-
-        console.log(
-          "Phone numbers in array:",
-          customersArray.map((c) => (c.Phone ? c.Phone.trim() : "undefined"))
-        );
-
-        const customer = customersArray.find(
-          (c) => c.Phone && c.Phone.trim() === phoneValue
-        );
-        console.log("Search result:", customer);
-
-        if (customer) {
-          nameInput.value = customer.Name ? customer.Name.trim() : ""; 
-          mobileInput.value = customer.Phone ? customer.Phone.trim() : ""; 
-          addressInput.value = customer.Address ? customer.Address.trim() : "";
-        } else {
-          nameInput.value = "";
-          mobileInput.value = "";
-          addressInput.value = "";
-          alert("Customer not found!");
-        }
-      });
-
-      function gomenu() {
-        window.location.href = "http://127.0.0.1:5500/MenuPage.html#";
-      }
-      
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/searchCustomer.js"></script>
   </body>
 </html>

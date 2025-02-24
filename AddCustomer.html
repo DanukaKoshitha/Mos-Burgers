@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Customer</title>
-    <link rel="stylesheet" href="AddCustomer.css" />
+    <link rel="stylesheet" href="css/AddCustomer.css" />
   </head>
   <body>
     <div class="customer">
@@ -12,7 +12,7 @@
         <ul>
           <li>
             <div class="line1">
-              <p id="cusId">C0001</p>
+              <p id="cusId"></p>
             </div>
           </li>
           <li>
@@ -54,56 +54,7 @@
       </div>
     </div>
 
-    <script>
-      function goMenuPage() {
-        window.location.href = "http://127.0.0.1:5500/MenuPage.html#";
-      }
-
-      let localCustomerArray = [];
-
-      function addCustomer() {
-
-        Swal.fire({
-          icon: "success",
-          title: "Added Succesfull",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-
-    let cusId = document.getElementById("cusId").innerText.trim();
-    let name = document.getElementById("name").value;
-    let mobile = document.getElementById("mobile").value;
-    let address = document.getElementById("address").value;
-
-    const customer = {
-        customerId: cusId,
-        Name: name,
-        Phone: mobile,
-        Address: address,
-    };
-
-    const localCustomerArray = JSON.parse(localStorage.getItem("customerData")) || [];
-
-    localCustomerArray.push(customer);
-
-    localStorage.setItem("customerData", JSON.stringify(localCustomerArray));
-    console.log("Customer added:", localCustomerArray);
-
-    let nextId = parseInt(cusId.replace("C", "")) + 1;
-    let nextCustomerId = "C" + String(nextId).padStart(4, "0");
-
-    document.getElementById("cusId").innerText = nextCustomerId;
-
-    document.getElementById("name").value = "";
-    document.getElementById("mobile").value = "";
-    document.getElementById("address").value = "";
-
-    localStorage.setItem("nextCustomerId", nextCustomerId);
-}
-
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="main.js" defer></script>
+    <script src="js/addCustomer.js"></script>
   </body>
 </html>
