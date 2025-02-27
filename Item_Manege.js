@@ -16,7 +16,7 @@ function loadTable() {
   fetch("http://localhost:8080/Item/get-items")
     .then(res =>  res.json())
     .then(data => {
-      data.forEach((element, index) => {
+      data.forEach((element) => {             
         tblBody += `   
         <tr>
             <td>${element.itemCode}</td>
@@ -33,13 +33,14 @@ function loadTable() {
 
       table.innerHTML = tblBody; 
     })
-    .catch(error => console.error("Error loading table:", error)); 
 }
 
 window.onload = loadTable;
 
 
 function deleteItem(itemCode) {
+  console.log(itemCode);
+  
   const requestOptions = {
     method: "DELETE",
     redirect: "follow"
