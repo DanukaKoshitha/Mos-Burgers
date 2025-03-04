@@ -139,17 +139,40 @@ function updateTotal() {
   TotalId.innerHTML = `Total: ${order.total}.00 LKR`;
 }
 
-
-
-
-
-
-
-
-
-
-
 ////////////////  Clear Cart and Start New Order  //////////////
-function new_orderid() {
+function placeOrder() {
+  console.log(order);
 
+  let final = {
+    order: {
+      customerID: "CustomemrID",
+      total: order.total,
+    },
+
+    items: [],
+  };
+
+  order.items.forEach((item) => {
+    final.items.push({
+      [item["itemCode"]]: item.qty,
+    });
+  });
+
+  console.log(final);
+
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify(final);
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+  };
+
+  fetch("http://localhost:8080/Order/save-order", requestOptions)
+    .then((response) => response.json())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
 }

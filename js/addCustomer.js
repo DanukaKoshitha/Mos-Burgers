@@ -1,5 +1,5 @@
 function goMenuPage() {
-    window.location.href = "/MenuPage.html#";
+    window.location.href = "/Mos-Burgers/MenuPage.html#";
   }
 
   function showCustomerID(){
