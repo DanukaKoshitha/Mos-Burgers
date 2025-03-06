@@ -140,6 +140,7 @@ function updateTotal() {
 }
 
 ////////////////  Clear Cart and Start New Order  //////////////
+
 function placeOrder() {
   console.log(order);
 
@@ -175,4 +176,12 @@ function placeOrder() {
     .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.error(error));
+
+
+  //////////////  clear card  //////////////
+
+  setOrder.innerHTML = "";
+
+  TotalId.innerHTML = "Total"
+
 }

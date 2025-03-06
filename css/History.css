@@ -1,0 +1,26 @@
+body {
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(to bottom, #000000, #8b0000);
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  #cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    list-style: none;
+    color: bisque;
+  }
+  .nav {
+    margin-left: 1100px;
+    padding: 25px;
+    font-size: 20px;
+    text-align: right;
+    color: bisque;
+    justify-content: space-between;
+    width: 400px;
+  }

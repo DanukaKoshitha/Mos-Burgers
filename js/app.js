@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
           showConfirmButton: false,
           timer: 1500,
         }).then(() => {
-          window.location.href = "/Mos-Burgers/CashierHome.html";
+          window.location.href = "/CashierHome.html";
         });
       } else {
         Swal.fire({
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
           showConfirmButton: false,
           timer: 1500,
         }).then(() => {
-          window.location.href = "/Mos-Burgers/AddminHome.html";
+          window.location.href = "/AddminHome.html";
         });
       } else {
         Swal.fire({

@@ -27,5 +27,5 @@ btnSearch.addEventListener("click", function () {
       });
 
       function gomenu() {
-          window.location.href = "/Mos-Burgers/MenuPage.html#";
+          window.location.href = "/MenuPage.html#";
       }
